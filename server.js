@@ -19,6 +19,9 @@ const app = express();
 const db = require("./db");
 //This will create db obj
 
+//dotenv:
+require("dotenv").config();
+
 // //import routes
 // const personRoutes = require('./routes/personRoutes');
 
@@ -152,7 +155,8 @@ app.use("/person", personRoutes);
 const menuRoutes = require("./routes/menuRoutes");
 app.use("/menu", menuRoutes);
 
-app.listen(3000, () => {
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => {
   console.log("Listening on port 3000...!");
 });
 //comment

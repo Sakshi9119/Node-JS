@@ -1,7 +1,13 @@
 const mongoose = require("mongoose");
 
-//Define mongodb conn url
-const mongoURL = "mongodb://localhost:27017/hotels";
+//Define mongodb conn url (local URL)
+// const mongoURL = "mongodb://localhost:27017/hotels";
+// const mongoURL = process.env.MONGODB_URL_LOCAL;
+
+//Atlas:
+// const mongoURL =
+//   "mongodb+srv://Sakshi:Xdk6SY5i9Q0VODNl@nodehotel.ywvxpzf.mongodb.net/";
+const mongoURL = process.env.MONGODB_URL;
 
 //setuo mongodb conn
 mongoose.connect(mongoURL);
